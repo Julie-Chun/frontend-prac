@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+/* custom Properties */
+
+:root {
+    --leading: 2em;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+
+.hero-bg {
+    background: #ffe77e url('../images/bg.jpg');
+    color:black;
+    text-align: center;
+    padding-bottom: 5em;
+    background-position: 12% 75%;
+}
+
+header {
+    padding: 2em 0;
+}
+
+.hero-bg a {
+    color: rgb(41, 39, 39);
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+section {
+    margin: 0 3em;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 2rem 0 3em;
+}
+
+h1 span {
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    position: relative;
+    z-index: 1;
+}
+
+h1 span::before {
+    content: ' ';
+    position: absolute;
+    width: 3em;
+    background-color: rgb(252, 242, 148);
+    rgb(252, 242, 148);
+    height: .4em;
+    bottom: -0.05em;
+    z-index: -1;
+    margin-left: -0.55em;
+}
+
+.hero-bg p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+
+.form-container {
+    background-color: rgba(216, 216, 216, 0.666);
+    margin: 2em -3em 0;
+    padding: 2em;
+}
+
+label {
+    color:rgb(41, 39, 39);
+    font-weight: bold;
+    display: block;
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+input[type=text] {
+    border: 1px solid rgb(109, 109, 109);
+    width: 90%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 1em;
+    margin: 1.2em .5em 0 .5em;
+}
+
+.form-container p {
+    color: rgb(79, 79, 79);
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+input[TYPE=button] {
+    background-color: rgb(215, 97, 97);
+    border: none;
+    width: 90%;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+input[TYPE=button]:hover {
+    background-color: rgb(196, 71, 71);
+}
+
+.authentic {
+    margin: 0;   
+}
+
+.right-column {
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before {
+    content: ' ';
+    position: absolute;
+    width: 8em;
+    background-color: rgb(252, 242, 148);
+    height: 0.5em;
+    bottom: -0.05em;
+    z-index: -1;
+    margin-left: -0.55em;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    line-height: var(--leading);
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    place-content: center;
+    color: white;
+    display: none;
+    opacity: 0;
+}
+
+.animate-overlay {
+    animation: overlay 3s forwards;
+}
+
+@media (min-width: 730px) {
+    section {
+        margin: 0 5em;
+    }
+
+    .form-container {
+        margin: 2em -5em 0;
+    }
+
+
+}
+
+@media (min-width: 930px) {
+    .hero-bg {
+       text-align: left;
+    }
+
+    .hero-bg p {
+       margin: 0 0 3em;
+    }
+
+    .hero-bg section {
+        width: 60%;
+    }
+
+    .form-container {
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: 1em;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    form {
+        display: flex;
+    }
+
+    .form-left {
+        width: 70%;
+    }
+
+    label {
+        margin: 0;
+        padding: 0;
+    }
+    
+    input[type="text"] {
+        margin-left: 0;
+        margin-top: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    input[type="button"] {
+        height: fit-content;
+        font-size:1.1em;
+        margin-left: 1em;
+        margin-top: 2.2em;
+        padding: 0.7em 0;
+        width: 30%;
+    }
+
+    .hero-bg p {
+        margin-bottom: 0;
+    }
+
+    section.authentic {
+        display: grid;
+        grid-template-columns: repeat (2, 50%);
+        grid-template-areas: "plate content";
+    }
+
+    .right-column {
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    img {
+        grid-area: bowl;
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.top {
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);
+
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0em);
+    }
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+
+}
